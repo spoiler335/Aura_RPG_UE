@@ -24,7 +24,7 @@
 		"directory": "C:\\UE_5.1\\Engine\\Source"
 	},
 	{
-		"file": "E:\\Unreal Projects\\Aura\\Source\\Aura\\AuraCharacterBase.cpp",
+		"file": "E:\\Unreal Projects\\Aura\\Source\\Aura\\Character\\AuraCharacter.cpp",
 		"arguments": [
 			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\cl.exe",
 			"@E:\\Unreal Projects\\Aura\\.vscode\\compileCommands_Aura\\Aura.255.rsp"
@@ -32,7 +32,39 @@
 		"directory": "C:\\UE_5.1\\Engine\\Source"
 	},
 	{
-		"file": "E:\\Unreal Projects\\Aura\\Source\\Aura\\AuraCharacterBase.h",
+		"file": "E:\\Unreal Projects\\Aura\\Source\\Aura\\Character\\AuraCharacter.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\cl.exe",
+			"@E:\\Unreal Projects\\Aura\\.vscode\\compileCommands_Aura\\Aura.255.rsp"
+		],
+		"directory": "C:\\UE_5.1\\Engine\\Source"
+	},
+	{
+		"file": "E:\\Unreal Projects\\Aura\\Source\\Aura\\Character\\AuraCharacterBase.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\cl.exe",
+			"@E:\\Unreal Projects\\Aura\\.vscode\\compileCommands_Aura\\Aura.255.rsp"
+		],
+		"directory": "C:\\UE_5.1\\Engine\\Source"
+	},
+	{
+		"file": "E:\\Unreal Projects\\Aura\\Source\\Aura\\Character\\AuraCharacterBase.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\cl.exe",
+			"@E:\\Unreal Projects\\Aura\\.vscode\\compileCommands_Aura\\Aura.255.rsp"
+		],
+		"directory": "C:\\UE_5.1\\Engine\\Source"
+	},
+	{
+		"file": "E:\\Unreal Projects\\Aura\\Source\\Aura\\Character\\AuraEnemy.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\cl.exe",
+			"@E:\\Unreal Projects\\Aura\\.vscode\\compileCommands_Aura\\Aura.255.rsp"
+		],
+		"directory": "C:\\UE_5.1\\Engine\\Source"
+	},
+	{
+		"file": "E:\\Unreal Projects\\Aura\\Source\\Aura\\Character\\AuraEnemy.h",
 		"arguments": [
 			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\cl.exe",
 			"@E:\\Unreal Projects\\Aura\\.vscode\\compileCommands_Aura\\Aura.255.rsp"
