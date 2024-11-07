@@ -21,5 +21,4 @@ void AAuraCharacter::BeginPlay()
 	bUseControllerRotationPitch = false;
 	bUseControllerRotationRoll = false;
 	bUseControllerRotationYaw = false;
-	
 }

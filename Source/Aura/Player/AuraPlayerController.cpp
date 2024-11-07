@@ -10,6 +10,13 @@ AAuraPlayerController::AAuraPlayerController()
 	bReplicates = true;
 }
 
+void AAuraPlayerController::PlayerTick(float DeltaTime)
+{
+	Super::PlayerTick(DeltaTime);
+
+	CursorTrace();
+}
+
 void AAuraPlayerController::BeginPlay()
 {
 	Super::BeginPlay();
@@ -54,5 +61,38 @@ void AAuraPlayerController::Move(const FInputActionValue& inputActionValue)
 	{
 		controllerPawn->AddMovementInput(forwardDirection, inputAxisVector.Y);
 		controllerPawn->AddMovementInput(rightDirection, inputAxisVector.X);
+	}
+}
+
+void AAuraPlayerController::CursorTrace()
+{
+	FHitResult cursorHit;
+	GetHitResultUnderCursor(ECC_Visibility, false, cursorHit);
+	if (!cursorHit.bBlockingHit) return;
+
+	lastActor = thisActor;
+	thisActor = cursorHit.GetActor();
+
+	if (!lastActor)
+	{
+		if (thisActor)
+		{
+			thisActor->HighLightActor();
+		}
+	}
+	else
+	{
+		if (!thisActor)
+		{
+			lastActor->UnHighLightActor();
+		}
+		else
+		{
+			if (lastActor != thisActor)
+			{
+				lastActor->UnHighLightActor();
+				thisActor->HighLightActor();
+			}
+		}
 	}
 }
