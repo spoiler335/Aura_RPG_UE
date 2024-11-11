@@ -16,7 +16,7 @@ void AAuraCharacter::PossessedBy(AController* NewController)
 
 
 	//Init Ability Actor Info for the server
-	InitAbiltyActorInfo();
+	InitAbilityActorInfo();
 }
 
 void AAuraCharacter::OnRep_PlayerState()
@@ -24,7 +24,7 @@ void AAuraCharacter::OnRep_PlayerState()
 	Super::OnRep_PlayerState();
 
 	//Init Ability Actor Info for the client
-	InitAbiltyActorInfo();
+	InitAbilityActorInfo();
 }
 
 void AAuraCharacter::BeginPlay()
@@ -41,7 +41,7 @@ void AAuraCharacter::BeginPlay()
 	bUseControllerRotationYaw = false;
 }
 
-void AAuraCharacter::InitAbiltyActorInfo()
+void AAuraCharacter::InitAbilityActorInfo()
 {
 	AAuraPlayerState* playerState = GetPlayerState<AAuraPlayerState>();
 	check(playerState);
