@@ -3,10 +3,14 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "AbilitySystemComponent.h"
 #include "GameFramework/HUD.h"
 #include "AuraHUD.generated.h"
 
 class UAuraUserWidget;
+class UOverlayWidgetController;
+struct  FWidgetControllerParams;
+
 /**
  * 
  */
@@ -20,11 +24,18 @@ public:
 	UPROPERTY()
 	TObjectPtr<UAuraUserWidget> overlayWidget;
 
-protected:
-	virtual void BeginPlay() override;
+	UOverlayWidgetController* GetOverlayWidgetController(const FWidgetControllerParams& wcParams);
+
+	void InitOverlay(APlayerController* pc, APlayerState* ps,UAbilitySystemComponent* acs, UAttributeSet* as);
+
 	
 private:
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<UAuraUserWidget> overlayWidgetClass;
-	
+
+	UPROPERTY()
+	TObjectPtr<UOverlayWidgetController> overlayWidgetController;
+
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<UOverlayWidgetController> overlayWidgetControllerClass;
 };

@@ -4,12 +4,31 @@
 #include "AuraHUD.h"
 #include "Blueprint/UserWidget.h"
 #include "Aura/UI/Widget/AuraUserWidget.h"
+#include "Aura/UI/WidgetController/OverlayWidgetController.h"
 
-void AAuraHUD::BeginPlay()
+UOverlayWidgetController* AAuraHUD::GetOverlayWidgetController(const FWidgetControllerParams& wcParams)
 {
-	Super::BeginPlay();
+	if (!overlayWidgetController)
+	{
+		overlayWidgetController = NewObject<UOverlayWidgetController>(this,overlayWidgetControllerClass);
+		overlayWidgetController->SetWidgetControllerParams(wcParams);
+	}
 
+	return overlayWidgetController;
+}
+
+void AAuraHUD::InitOverlay(APlayerController* pc, APlayerState* ps, UAbilitySystemComponent* acs, UAttributeSet* as)
+{
+	checkf(overlayWidgetClass,TEXT("overlayWidgetClass is null"));
+	checkf(overlayWidgetControllerClass,TEXT("overlayWidgetControllerClass is null"));
+	
 	UUserWidget* widget = CreateWidget<UAuraUserWidget>(GetWorld(), overlayWidgetClass);
-	if (widget)
-		widget->AddToViewport();
+	overlayWidget=Cast<	UAuraUserWidget>(widget);
+	const FWidgetControllerParams wcParams(pc,ps,acs,as);
+
+	UOverlayWidgetController* lOverlayWC = GetOverlayWidgetController(wcParams);
+	checkf(lOverlayWC,TEXT("overlayWidgetController is null"));
+	overlayWidget->SetWidgetController(lOverlayWC);
+	
+	widget->AddToViewport();
 }
