@@ -28,6 +28,7 @@ void AAuraEffectsActor::OnOverlap(UPrimitiveComponent* overlappedComponent, AAct
 			aciInterface->GetAbilitySystemComponent()->GetAttributeSet(UAuraAttributeSet::StaticClass()));
 		UAuraAttributeSet* mutableAttributes = const_cast<UAuraAttributeSet*>(auraAttributeSet);
 		mutableAttributes->Sethealth(auraAttributeSet->Gethealth() + 25.f);
+		mutableAttributes->Setmana(auraAttributeSet->Getmana() - 25.f);
 		Destroy();
 	}
 }
